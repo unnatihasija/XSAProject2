@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="CV_SFLIGHT" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" defaultClient="$$client$$" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="CV_SFLIGHT"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="SFLIGHT">
+    <resourceUri>SFLIGHT</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews/>
+<logicalModel id="SFLIGHT">
+  <attributes>
+    <attribute id="CARRID" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CARRID"/>
+      <keyMapping columnObjectName="SFLIGHT" columnName="CARRID"/>
+    </attribute>
+    <attribute id="SEATSMAX_F" order="2" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SEATSMAX_F"/>
+      <keyMapping columnObjectName="SFLIGHT" columnName="SEATSMAX_F"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

@@ -1,0 +1,31 @@
+ID: demo_roles
+_schema-version: '2.0'
+version: 0.0.1
+
+modules:
+ - name: hdb
+   type: hdb
+   path: hdb
+   requires:
+    - name: hdi-container
+      properties:
+        TARGET_CONTAINER: ~{hdi-container-name}
+
+    - name: CrossSchemaService
+      group: SERVICE_REPLACEMENTS
+      properties:
+        key: hdi-sflight-service
+        service: ~{sflight-service-name}  
+        
+resources:
+ - name: hdi-container
+   properties:
+      hdi-container-name: ${service-name}
+   type: com.sap.xs.hdi-container
+
+ - name: CrossSchemaService
+   type: org.cloudfoundry.existing-service
+   parameters:
+     service-name: SYSTEM-table-grantor
+   properties:
+     sflight-service-name: ${service-name}
